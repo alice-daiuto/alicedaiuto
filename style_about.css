@@ -1,0 +1,299 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+@font-face {
+    font-family: 'Switzer';
+    src: url('Switzer-Variable.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Switzer';
+    src: url('Switzer-Variable.ttf') format('truetype'); /* Assicurati di avere il file per il grassetto */
+    font-weight: 600; 
+    font-style: semibold;
+}
+
+@font-face {
+    font-family: 'Switzer';
+    src: url('Switzer-Variable.ttf') format('truetype'); /* Assicurati di avere il file per il grassetto */
+    font-weight: 800; 
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'Nostra';
+    src: url('Nostra-Stream.otf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-switzer {
+    font-family: 'Switzer', sans-serif;
+    padding-right: 20px;
+    position: relative;
+    left: -0.3em;
+}
+
+.font-nostra {
+    font-family: 'Nostra', sans-serif;
+}
+
+h1 {
+    font-family: 'Nostra';
+    font-size: clamp(2em, 4vw, 10em); /* Min 2em, preferito 8vw, max 10em */
+    font-weight: 200;
+    padding: 0;
+    margin-top: -1%;
+    margin-bottom: 0;
+    margin-right: auto;
+    white-space: nowrap; /* Assicura che il testo resti su una riga */
+    align-items: flex-start;
+}
+
+h2{
+    font-size: clamp(2em, 4vw, 10em); /* Min 2em, preferito 8vw, max 10em */
+    font-weight: 200;
+    margin: 0;
+    line-height: 0.8;
+}
+
+body {
+    font-family: 'Switzer', sans-serif;
+    padding: 10px 50px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x:  hidden;
+    overflow-y: hidden;
+}
+
+
+li, a {
+    color: black;
+    text-decoration: none;
+    font-weight: 100;
+}
+
+header {
+    position: sticky; /* Imposta l'header come sticky */
+    top: 0; /* Fissa l'header nella parte superiore della pagina */
+    background-color: white; /* Aggiungi un colore di sfondo per il contrasto */
+    z-index: 1000; /* Assicurati che l'header rimanga sopra altri contenuti */
+    padding: 10px 0;
+}
+
+
+ 
+
+.nav__links {
+    list-style: none;
+    margin-top: 0;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none; /* Rimuove la sottolineatura */
+    font-weight: 400; 
+}
+
+.nav__links li a:hover {
+    font-style: italic; /* Rende il testo in grassetto quando ci si passa sopra */
+}
+
+p {
+    line-height: 105%;
+    padding: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+
+/* Nuovo contenitore per allineare h1 e p (nav) orizzontalmente */
+.top-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start; /* Mantiene tutto allineato a sinistra */
+    margin-top: 0;
+    height: 140px;
+}
+
+
+.nav {
+    margin: 0; /* Rimuove margini predefiniti */
+    padding: 0; /* Rimuove padding predefinito */
+    margin-right: 10px; /* Spazio orizzontale tra i paragrafi */
+}
+
+
+.content-section {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 70px); /* Altezza dinamica meno l'header */
+}
+
+/* Sezioni di contenuto */
+.left {
+    flex: 1; /* Occupa una parte */
+    padding: 20px; /* Aggiungi padding per l'estetica */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Allinea il contenuto in alto */
+}
+
+.right {
+    flex: 1; /* Occupa una parte uguale rispetto a .left */
+    padding: 20px; /* Padding per l'estetica */
+    overflow-y: auto; /* Rende scrollabile */
+    height: auto; /* Permette all'altezza di adattarsi al contenuto */
+    max-height: calc(100vh - 70px); /* Limita l'altezza per consentire scrolling */
+    box-sizing: border-box; /* Include il padding nel calcolo dell'altezza */
+}
+
+
+.right::-webkit-scrollbar {
+    display: none; /* Nasconde la barra di scorrimento per Chrome, Safari e Edge */
+}
+
+p {
+    line-height: 1.4;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+
+
+.footer {
+    position: fixed; /* Fissa il footer in basso */
+    left: 0; /* Allinea a sinistra */
+    right: 0; /* Allinea a destra */
+    bottom: 0; /* Posiziona in fondo alla pagina */
+    background-color: white; /* Colore di sfondo del footer */
+    padding: 20px 20px 20px 20px; /* Padding per dare spazio interno */
+    display: flex; /* Usa flexbox */
+    justify-content: space-between; /* Spaziatura uniforme tra gli elementi */
+    align-items: center; /* Allinea verticalmente al centro */
+    box-shadow: none;
+    z-index: 1000; /* Assicura che il footer sia sopra altri contenuti */
+    height: 20px; /* Altezza del footer */
+}
+
+
+.footer-left {
+    flex: 1; /* Occupa metà dello spazio */
+    text-align: left; 
+    padding-left: 20px;
+    font-size: smaller;
+}
+
+.footer-right {
+    flex: 1; /* Occupa metà dello spazio */
+    text-align: right; 
+    padding-right: 20px;
+    font-size: smaller;
+}
+.prev,
+.next {
+    font-weight: bold; /* Grassetto per il testo */
+    color: #333; /* Colore del testo */
+    cursor: pointer; /* Cambia il cursore su hover */
+    transition: color 0.3s; /* Transizione per l'hover */
+}
+
+
+
+.about {
+    margin: 30px 0 0 0px;
+    position: sticky;
+    width: 257px;
+    height: 210px;
+    flex-shrink: 0;
+}
+
+
+
+.cv {
+    margin-top: 450px;
+    margin-bottom: 0;
+    position: sticky;
+    font-weight: normal;
+    font-size: small;
+}
+
+.right p {
+    line-height: 1.4;
+}
+
+.small-text {
+    font-size: 0.8em;
+    font-weight: 100;
+    line-height: 2;
+}
+
+
+
+/* Media Query per schermi più piccoli */
+@media (max-width: 768px) {
+    body {
+        padding: 10px 10px; 
+        overflow-x: hidden; 
+        overflow-y: auto;
+        margin: 15px;
+        min-height: 100vh; /* Fa sì che il body copra tutto lo schermo */
+    }
+
+    .top-section {
+        height: 100px;
+    }
+
+    .content-section {
+        display: flex;
+        flex-direction: column; /* Disposizione in colonna per schermi piccoli */
+        height: auto; /* Rimuove l'altezza fissa */
+        flex-grow: 1; /* Fa sì che si espanda per coprire lo spazio disponibile */
+        overflow-y: auto;
+        overflow-x: hidden;
+        border: none;
+    }
+
+    .left {
+        width: 100%; /* Larghezza al 100% */
+        margin-bottom: 20px; /* Spazio tra left e right */
+        padding-left: 10px;
+        order: 1; /* Prima sezione */
+    }
+
+    .right {
+        order: 2; /* Seconda sezione */
+        width: 100%; /* Larghezza al 100% */
+        margin-bottom: 20px; /* Spazio sotto il contenitore right */
+        overflow-y: auto; /* Rende scrollabile se necessario */
+        padding: 10px;
+        flex-grow: 1; /* Fa sì che occupi lo spazio disponibile */
+        overflow-x: hidden;
+    }
+
+    .cv {
+        order: 3; /* Ultima sezione */
+        width: 100%; /* Larghezza al 100% */
+        margin-top: 10px; /* Rimuove margini superiori */
+        font-size: 0.8em;
+        font-weight: 100;
+    }
+
+    img.about{
+        margin-top: 55px;
+        margin-left: 0px;;
+    }
+    .nav__links {
+        padding-left: 110px;
+    }
+}

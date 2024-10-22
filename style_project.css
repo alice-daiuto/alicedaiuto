@@ -1,0 +1,437 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+@font-face {
+    font-family: 'Switzer';
+    src: url('Switzer-Variable.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Switzer';
+    src: url('Switzer-Variable.ttf') format('truetype'); /* Assicurati di avere il file per il grassetto */
+    font-weight: 600; 
+    font-style: semibold;
+}
+
+@font-face {
+    font-family: 'Switzer';
+    src: url('Switzer-Variable.ttf') format('truetype'); /* Assicurati di avere il file per il grassetto */
+    font-weight: 800; 
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'Nostra';
+    src: url('Nostra-Stream.otf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-switzer {
+    font-family: 'Switzer', sans-serif;
+    padding-right: 20px;
+    position: relative;
+    left: -0.3em;
+}
+
+.font-nostra {
+    font-family: 'Nostra', sans-serif;
+}
+
+h1 {
+    font-family: 'Nostra';
+    font-size: clamp(2em, 4vw, 10em); /* Min 2em, preferito 8vw, max 10em */
+    font-weight: 200;
+    padding: 0;
+    margin-top: -1%;
+    margin-bottom: 0;
+    margin-right: auto;
+    white-space: nowrap; /* Assicura che il testo resti su una riga */
+    align-items: flex-start;
+}
+
+h2{
+    font-size: clamp(2em, 4vw, 10em); /* Min 2em, preferito 8vw, max 10em */
+    font-weight: 200;
+    margin: 0;
+    line-height: 0.8;
+}
+
+body {
+    font-family: 'Switzer', sans-serif;
+    padding: 10px 50px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x:  hidden;
+    overflow-y: hidden;
+}
+
+
+li, a {
+    color: black;
+    text-decoration: none;
+    font-weight: 100;
+}
+
+header {
+    position: sticky; /* Imposta l'header come sticky */
+    top: 0; /* Fissa l'header nella parte superiore della pagina */
+    background-color: white; /* Aggiungi un colore di sfondo per il contrasto */
+    z-index: 1000; /* Assicurati che l'header rimanga sopra altri contenuti */
+    padding: 10px 0;
+}
+
+
+ 
+
+.nav__links {
+    list-style: none;
+    margin-top: 0;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none; /* Rimuove la sottolineatura */
+    font-weight: 400; 
+}
+
+.nav__links li a:hover {
+    font-style: italic; /* Rende il testo in grassetto quando ci si passa sopra */
+}
+
+p {
+    line-height: 105%;
+    padding: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+
+/* Nuovo contenitore per allineare h1 e p (nav) orizzontalmente */
+.top-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start; /* Mantiene tutto allineato a sinistra */
+    margin-top: 0;
+    height: 140px;
+}
+
+
+.nav {
+    margin: 0; /* Rimuove margini predefiniti */
+    padding: 0; /* Rimuove padding predefinito */
+    margin-right: 10px; /* Spazio orizzontale tra i paragrafi */
+}
+
+
+
+.info{
+    margin: 30px 0 20px 0;
+    position: sticky;
+    font-size: smaller;
+    line-height: 1.2;
+
+}
+
+.description {
+    margin-top: auto; /* Spinge il secondo paragrafo verso il fondo */
+    margin-bottom: 0;
+    position: sticky;
+    line-height: 1.2;
+}
+
+.content-section {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 70px); /* Altezza dinamica meno l'header */
+    flex-wrap: wrap; /* Consente ai contenitori di andare a capo */
+}
+
+/* Stili per il left-container e right-container */
+.left-container {
+    flex: 3; /* Occupa 3 parti rispetto al totale */
+    padding: 0 50px 0 0; 
+    display: flex; /* Imposta il display a flex */
+    flex-direction: column; /* Disposizione verticale */
+    justify-content: space-between; /* Spazia tra il primo e il secondo paragrafo */
+    height: 80%; /* Imposta un'altezza inferiore al contenitore di destra */
+}
+
+.right-container {
+    flex: 5; /* Occupa una parte più grande rispetto alla left-container */
+    padding: 0;
+    overflow-y: auto; /* Rende scrollabile la galleria */
+    height: calc(100% - 100px); /* Riduci l'altezza per permettere spazio in fondo */
+    scrollbar-width: none; /* Nasconde la scrollbar */
+}
+
+
+
+
+.right-container::-webkit-scrollbar {
+    display: none; /* Nasconde la barra di scorrimento per Chrome, Safari e Edge */
+}
+
+.image-gallery {
+    display: flex;
+    flex-direction: column; /* Disposizione verticale delle immagini */
+    gap: 20px; /* Distanza tra le immagini */
+    margin-bottom: 50px; /* Margine inferiore della galleria */
+    padding-bottom: 50px; /* Padding inferiore per ulteriore spazio */
+}
+
+.image-gallery img,
+.image-gallery video 
+ {
+    width: 100%; /* L'immagine occupa tutta la larghezza del contenitore */
+    height: auto; /* Mantiene le proporzioni */
+    object-fit: cover; /* Copre il contenitore senza distorsioni */
+}
+
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: auto;
+    object-fit: cover; /* Copre il contenitore senza distorsioni */
+
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.footer {
+    position: fixed; /* Fissa il footer in basso */
+    left: 0; /* Allinea a sinistra */
+    right: 0; /* Allinea a destra */
+    bottom: 0; /* Posiziona in fondo alla pagina */
+    background-color: white; /* Colore di sfondo del footer */
+    padding: 20px 20px 20px 20px; /* Padding per dare spazio interno */
+    display: flex; /* Usa flexbox */
+    justify-content: space-between; /* Spaziatura uniforme tra gli elementi */
+    align-items: center; /* Allinea verticalmente al centro */
+    box-shadow: none;
+    z-index: 1000; /* Assicura che il footer sia sopra altri contenuti */
+    height: 20px; /* Altezza del footer */
+}
+
+
+.footer-left {
+    flex: 1; /* Occupa metà dello spazio */
+    text-align: left; 
+    padding-left: 20px;
+    font-size: smaller;
+}
+
+.footer-right {
+    flex: 1; /* Occupa metà dello spazio */
+    text-align: right; 
+    padding-right: 20px;
+    font-size: smaller;
+}
+.prev,
+.next {
+    font-weight: bold; /* Grassetto per il testo */
+    color: #333; /* Colore del testo */
+    cursor: pointer; /* Cambia il cursore su hover */
+    transition: color 0.3s; /* Transizione per l'hover */
+}
+
+
+/* PAGINA CONTACTS */
+.contacts {
+    line-height: 1.8;
+    margin: 30px 0 0 10px;
+    position: sticky;
+}
+
+.contacts a {
+    font-weight: normal; /* Peso del testo iniziale */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    color: inherit; /* Mantiene il colore del testo */
+    position: relative; /* Per gestire il posizionamento della freccia */
+    display: inline-block; /* Necessario per il padding e l'effetto */
+    transition: padding-left 0.3s ease; /* Transizione per lo spostamento del testo */
+}
+
+.contacts a:hover {
+    font-weight: semibold; /* Aumenta il peso del testo a bold quando hover */
+    padding-left: 25px; /* Spinge il testo a destra quando hover */
+}
+
+.contacts a::before {
+    content: ''; /* Vuoto inizialmente */
+    position: absolute;
+    left: 0; /* Posiziona la freccia all'inizio */
+    transition: opacity 0.3s ease; /* Transizione morbida per la freccia */
+    opacity: 0; /* La freccia è nascosta inizialmente */
+}
+
+.contacts a:hover::before {
+    content: '↘'; /* Freccia che compare */
+    opacity: 1; /* La freccia diventa visibile */
+}
+
+
+/* PAGINA ABOUT */
+.about {
+    margin: 30px 0 0 5px;
+    position: sticky;
+    width: 257px;
+    height: 210px;
+    flex-shrink: 0; 
+}
+
+.right {
+    flex: 4; /* Occupa una parte più grande rispetto alla left-container */
+    padding: 0;
+    overflow-y: auto; /* Rende scrollabile la galleria */
+    height: calc(100% - 100px); /* Riduci l'altezza per permettere spazio in fondo */
+    scrollbar-width: none;
+}
+
+.right::-webkit-scrollbar {
+    display: none; /* Nasconde la barra di scorrimento per Chrome, Safari e Edge */
+}
+
+.left {
+    flex: 4; /* Occupa 3 parti rispetto al totale */
+    padding: 0 50px 0 0; 
+    position: sticky;
+    display: flex; /* Imposta il display a flex */
+    flex-direction: column; /* Disposizione verticale */
+    justify-content: space-between; /* Spazia tra il primo e il secondo paragrafo */
+    height: 80%; /* Imposta un'altezza inferiore al contenitore di destra */
+}
+
+.cv {
+    margin-top: auto; /* Spinge il secondo paragrafo verso il fondo */
+    margin-bottom: 0;
+    position: sticky;
+    font-weight: normal;
+}
+
+.right p {
+    line-height: 1.4;
+}
+
+.small-text {
+    font-size: 0.8em;
+    font-weight: 100;
+    line-height: 2;
+}
+
+.burger-menu {
+    display: none; /* Nasconde il burger menu di default */
+    flex-direction: column; /* Disposizione verticale */
+    cursor: pointer; /* Cambia il cursore al passaggio del mouse */
+}
+
+.burger-menu .line {
+    width: 30px; /* Larghezza delle linee */
+    height: 3px; /* Altezza delle linee */
+    background-color: black; /* Colore delle linee */
+    margin: 4px 0; /* Spaziatura tra le linee */
+}
+
+/* Media Query per schermi più piccoli */
+
+@media (max-width: 768px) {
+
+    .top-section{
+        height: 100px;
+    }
+
+    .content-section {
+        flex-direction: column; /* Cambia la direzione in colonna */
+        width: 100%; /* Assicurati che la larghezza sia al 100% */
+        overflow: hidden; /* Nasconde qualsiasi overflow */
+    }
+
+    .left-container {
+        flex: 1; /* Occupano 1 parte */
+        width: 100%; /* Larghezza 100% per left-container */
+        padding: 0 10px; /* Padding laterale per left-container */
+        margin-bottom: 20px; /* Spazio inferiore tra left-container e right-container */
+    }
+
+    .right-container {
+        flex: 1; /* Occupano 1 parte */
+        width: 100%; /* Larghezza 100% per right-container */
+        padding: 0 10px; /* Padding laterale per right-container */
+        margin-bottom: 20px; /* Spazio inferiore */
+        overflow-y: auto; /* Permette alla gallery di scrollare verticalmente */
+        max-height: 50vh; /* Massima altezza per il contenitore della galleria */
+    }
+
+    .nav__links {
+        padding-left: 110px;
+    }
+
+    .info {
+        margin-bottom: 20px; /* Aggiungi margine inferiore per separare info da description */
+    }
+
+    .description {
+        margin-bottom: 20px; /* Spazio inferiore per la description */
+        max-height: 200px; /* Limita l'altezza della description */
+        overflow-y: auto; /* Rende scrollabile la description se troppo lunga */
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .image-gallery {
+        display: flex;
+        flex-wrap: wrap; /* Consenti il wrapping delle immagini */
+        justify-content: space-between; /* Spaziatura uniforme */
+        gap: 20px; /* Spaziatura tra le immagini */
+        margin-top: 20px; /* Spazio sopra la gallery */
+        width: 100%; /* Assicura che occupi la larghezza intera */
+    }
+
+    img,
+    video {
+        width: calc(50% - 10px); /* Ogni immagine occupa metà della larghezza meno il gap */
+        height: auto; /* Mantiene le proporzioni */
+        max-width: none;
+    }
+
+    body {
+        padding: 10px 10px; 
+        overflow-x: hidden; /* Nasconde lo scroll orizzontale */
+        margin: 15px; 
+    }
+
+    .footer {
+        padding: 8px;
+    }
+
+    .cv {
+        font-size: 0.8em;
+        font-weight: 100;
+        line-height: 2;
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+
+    .burger-menu {
+        display: flex; /* Mostra il burger menu */
+    }
+}
+
