@@ -71,14 +71,10 @@ body {
     overflow-y: hidden;
 }
 
-.arrow-image {
-    height: 20%; 
-    width: auto; /* Mantiene le proporzioni */
-    vertical-align: middle; /* Allinea l'immagine al centro del testo */
-    display: inline-block; /* Rende l'immagine in linea con il testo */
-    margin-left: 5px; /* Spazio tra l'immagine e il testo */
+.arrow {
+    font-family: Arial, sans-serif; /* Specifica un font che non usi emoji */
+    display: inline; /* Assicurati che sia in linea con il testo circostante */
 }
-
 
 
 li, a {
