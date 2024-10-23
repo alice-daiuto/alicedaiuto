@@ -72,7 +72,7 @@ body {
 }
 
 .arrow-image {
-    height: 100%; /* Imposta l'altezza al 100% del paragrafo accanto */
+    height: 20%; 
     width: auto; /* Mantiene le proporzioni */
     vertical-align: middle; /* Allinea l'immagine al centro del testo */
     display: inline-block; /* Rende l'immagine in linea con il testo */
