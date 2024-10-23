@@ -354,30 +354,38 @@ p {
 
 @media (max-width: 768px) {
 
-    .top-section{
+    .top-section {
         height: 100px;
     }
 
     .content-section {
-        flex-direction: column; /* Cambia la direzione in colonna */
-        width: 100%; /* Assicurati che la larghezza sia al 100% */
-        overflow: hidden; /* Nasconde qualsiasi overflow */
+        display: flex;
+        flex-direction: column; /* Disposizione in colonna per schermi piccoli */
+        height: auto; /* Rimuove l'altezza fissa */
+        flex-grow: 1; /* Fa sì che si espanda per coprire lo spazio disponibile */
+        overflow-y: auto;
+        overflow-x: hidden;
+        border: none;
     }
 
     .left-container {
-        flex: 1; /* Occupano 1 parte */
-        width: 100%; /* Larghezza 100% per left-container */
-        padding: 0 10px; /* Padding laterale per left-container */
-        margin-bottom: 20px; /* Spazio inferiore tra left-container e right-container */
+        order: 1;
+        width: 100%; /* Larghezza al 100% */
+        margin-bottom: 20px; /* Spazio sotto il contenitore right */
+        padding: 10px;
+        flex-grow: 1; /* Fa sì che occupi lo spazio disponibile */
+        overflow-y: visible; /* Rende il contenuto visibile */
+        overflow-x: hidden; /* Nasconde overflow orizzontale */
     }
 
     .right-container {
-        flex: 1; /* Occupano 1 parte */
-        width: 100%; /* Larghezza 100% per right-container */
-        padding: 0 10px; /* Padding laterale per right-container */
-        margin-bottom: 20px; /* Spazio inferiore */
-        overflow-y: auto; /* Permette alla gallery di scrollare verticalmente */
-        max-height: 50vh; /* Massima altezza per il contenitore della galleria */
+        order: 2; /* Seconda sezione */
+        width: 100%; /* Larghezza al 100% */
+        margin-bottom: 20px; /* Spazio sotto il contenitore right */
+        padding: 10px;
+        flex-grow: 1; /* Fa sì che occupi lo spazio disponibile */
+        overflow-y: auto; /* Rende scrollabile se necessario */
+        overflow-x: hidden;
     }
 
     .nav__links {
@@ -389,11 +397,11 @@ p {
     }
 
     .description {
-        margin-bottom: 20px; /* Spazio inferiore per la description */
-        max-height: 200px; /* Limita l'altezza della description */
-        overflow-y: auto; /* Rende scrollabile la description se troppo lunga */
-        margin-bottom: 0;
-        margin-top: 0;
+        margin-bottom: 0; /* Spazio inferiore per la description */
+        width: calc(100% - 20px); /* Larghezza totale meno il padding */
+        padding: 0; /* Aggiungi padding interno */
+        box-sizing: border-box; /* Include padding e border nella larghezza */
+        scrollbar-width: none; /* Nasconde la barra di scorrimento in Firefox */
     }
 
     .image-gallery {
@@ -402,7 +410,9 @@ p {
         justify-content: space-between; /* Spaziatura uniforme */
         gap: 20px; /* Spaziatura tra le immagini */
         margin-top: 20px; /* Spazio sopra la gallery */
+        margin-bottom: 20px;
         width: 100%; /* Assicura che occupi la larghezza intera */
+        padding-bottom: 0;
     }
 
     img,
@@ -413,9 +423,11 @@ p {
     }
 
     body {
-        padding: 10px 10px; 
-        overflow-x: hidden; /* Nasconde lo scroll orizzontale */
-        margin: 15px; 
+        padding: 10px; 
+        overflow-x: hidden; 
+        overflow-y: auto;
+        margin: 15px;
+        min-height: 100vh; /* Fa sì che il body copra tutto lo schermo */
     }
 
     .footer {
@@ -430,8 +442,6 @@ p {
         margin-bottom: 40px;
     }
 
-    .burger-menu {
-        display: flex; /* Mostra il burger menu */
-    }
-}
 
+    
+}
