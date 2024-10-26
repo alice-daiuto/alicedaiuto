@@ -71,11 +71,6 @@ body {
     overflow-y: hidden;
 }
 
-.arrow {
-    font-family: Arial, sans-serif; /* Specifica un font che non usi emoji */
-    display: inline; /* Assicurati che sia in linea con il testo circostante */
-}
-
 
 li, a {
     color: black;
@@ -169,7 +164,7 @@ p {
     display: flex; /* Imposta il display a flex */
     flex-direction: column; /* Disposizione verticale */
     justify-content: space-between; /* Spazia tra il primo e il secondo paragrafo */
-    height: 80%; /* Imposta un'altezza inferiore al contenitore di destra */
+    max-height: 80%;
 }
 
 .right-container {
@@ -449,4 +444,16 @@ p {
 
 
     
+}
+
+@media (max-height: 900px) {
+    .left-container {
+        max-height: 75%; /* Riduce leggermente su schermi più bassi */
+    }
+}
+
+@media (max-height: 700px) {
+    .left-container {
+        max-height: 70% /* Riduce ancora di più su schermi piccoli */
+    }
 }
