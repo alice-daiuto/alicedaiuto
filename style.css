@@ -249,7 +249,7 @@ p {
     }
     
     .spacer {
-        height:450px;
+        height:500px;
     }
 
     .bottom-section{
@@ -329,3 +329,10 @@ p {
         text-align: center; /* Centra il testo */
     }
 }
+
+@media (max-height: 900px) {
+    .spacer{
+        height:500px; 
+    }
+}
+
