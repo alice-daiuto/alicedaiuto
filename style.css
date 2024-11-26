@@ -36,11 +36,11 @@ html {
 
 .font-nostra {
     font-family: 'Nostra', sans-serif;
-    letter-spacing: -38px; 
+    letter-spacing: -30px; 
 }
 
 h1 {
-    font-size: clamp(2em, 9vw, 10em); /* Min 2em, preferito 8vw, max 10em */
+    font-size: clamp(2em, 8vw, 10em); /* Min 2em, preferito 8vw, max 10em */
     font-weight: 200;
     letter-spacing: clamp(-1px, -2vw, -8px); /* Ridimensiona anche lo spazio tra lettere */
     padding: 0;
