@@ -450,7 +450,7 @@ p {
         width: 100%;
         aspect-ratio: auto; /* lascia che si auto-adattino */
     }
-    
+
     img,
     video {
         width: calc(50% - 10px); /* Ogni immagine occupa metà della larghezza meno il gap */
@@ -483,7 +483,8 @@ p {
 }
 
 
-@media (max-height: 900px) {
+@media (max-height: 900px) 
+{
     .left-container {
         max-height: 75%; /* Riduce leggermente su schermi più bassi */
     }
@@ -497,9 +498,9 @@ p {
         max-width: 360px;
         margin: 0 auto;
     }
+    }
 @media (max-height: 700px) {
     .left-container {
         max-height: 70% /* Riduce ancora di più su schermi piccoli */
     }
 }
-
