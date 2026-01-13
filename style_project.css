@@ -216,6 +216,20 @@ p {
     border: none;
 }
 
+.video-row {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.video-row video {
+    flex: 1 1 0;
+    min-width: 0;          /* 🔥 evita che uno si stringa più degli altri */
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+}
+
 .footer {
     position: fixed; /* Fissa il footer in basso */
     left: 0; /* Allinea a sinistra */
@@ -446,14 +460,24 @@ p {
     
 }
 
+
 @media (max-height: 900px) {
     .left-container {
         max-height: 75%; /* Riduce leggermente su schermi più bassi */
     }
-}
 
+    .video-row {
+        flex-direction: column;
+    }
+
+    .video-row video {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
 @media (max-height: 700px) {
     .left-container {
         max-height: 70% /* Riduce ancora di più su schermi piccoli */
     }
 }
+
