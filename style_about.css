@@ -31,6 +31,9 @@ html {
     font-style: normal;
 }
 
+.intro {
+  font-weight: 600;  /* SEMIBOLD */
+}
 .font-switzer {
     font-family: 'Switzer', sans-serif;
     padding-right: 20px;
@@ -211,12 +214,13 @@ p {
 
 
 .about {
-    margin: 30px 0 0 0px;
-    position: sticky;
-    width: 257px;
-    height: 210px;
-    flex-shrink: 0;
+  width: 257px;
+  height: 310px;
+  object-fit: cover;     
+  object-position: center;
+  display: block;
 }
+
 
 
 
