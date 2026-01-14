@@ -489,18 +489,27 @@ p {
         max-height: 75%; /* Riduce leggermente su schermi più bassi */
     }
 
-    .video-row {
-        flex-direction: column;
-    }
-
-    .video-row video {
-        width: 100%;
-        max-width: 360px;
-        margin: 0 auto;
-    }
+    
     }
 @media (max-height: 700px) {
     .left-container {
         max-height: 70% /* Riduce ancora di più su schermi piccoli */
     }
+}
+
+@media (max-width: 768px) {
+  .video-row {
+    flex-direction: column;
+  }
+
+  .video-row video {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+   .image-gallery > img,
+  .image-gallery > video {
+    width: calc(50% - 10px);
+  }
 }
