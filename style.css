@@ -106,7 +106,7 @@ header {
 }
 
 .nav__links li a:hover {
-    font-style: italic; /* Rende il testo in grassetto quando ci si passa sopra */
+    font-style: italic; 
     font-weight: 600;
 }
 
@@ -202,6 +202,7 @@ p {
 .image-item:hover .caption,
 .caption:hover {
     font-weight: 600;
+    font-style: italic; 
 }
 
 .image-item:hover img {
