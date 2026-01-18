@@ -509,8 +509,10 @@ p {
     margin: 0 auto;
   }
 
-   .image-gallery > img,
-  .image-gallery > video {
-    width: calc(50% - 10px);
+  @media (max-width: 768px) {
+  .image-gallery img,
+  .image-gallery video {
+    width: 100%;
+    height: auto;
   }
 }
