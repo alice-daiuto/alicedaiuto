@@ -281,6 +281,9 @@ p {
         object-fit: cover;
     }
 
+     .image-gallery {
+            gap: 5px;
+    }
     .responsive-header {
         display: none;
         position: sticky; /* Imposta l'header come sticky */
