@@ -119,6 +119,10 @@ p {
     margin-bottom: 8px;
 }
 
+ img.about{
+        margin-top: 30px;
+   }
+
 
 /* Nuovo contenitore per allineare h1 e p (nav) orizzontalmente */
 .top-section {

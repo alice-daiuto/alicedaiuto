@@ -162,7 +162,7 @@ p {
     width: 100%;
     height: auto; /* Modifica l'altezza per adattarsi anche ai testi */
     align-items: flex-start;
-    gap: 25px;
+    gap: 15px;
     flex-shrink: 0;
     margin: 80px auto;
     margin-bottom: 0;
