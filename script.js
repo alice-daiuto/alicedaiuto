@@ -46,3 +46,25 @@ const burgerMenu = document.getElementById('burgerMenu');
                 // Se non siamo in fondo, il link porterà a index.html normalmente
             }
         });
+
+        
+
+
+const cursor = document.querySelector(".custom-cursor");
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+
+const hoverElements = document.querySelectorAll("a, button");
+
+hoverElements.forEach(el => {
+  el.addEventListener("mouseenter", () => {
+    cursor.classList.add("hover");
+  });
+
+  el.addEventListener("mouseleave", () => {
+    cursor.classList.remove("hover");
+  });
+});
