@@ -186,7 +186,7 @@ p {
 .image-gallery {
     display: flex;
     flex-direction: column; /* Disposizione verticale delle immagini */
-    gap: 20px; /* Distanza tra le immagini */
+    gap: 5px; /* Distanza tra le immagini */
     margin-bottom: 50px; /* Margine inferiore della galleria */
     padding-bottom: 50px; /* Padding inferiore per ulteriore spazio */
 }
@@ -219,7 +219,7 @@ p {
 
 .video-row {
     display: flex;
-    gap: 24px;
+    gap: 5px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -233,7 +233,7 @@ p {
 
 .two-images-row {
     display: flex;
-    gap: 24px;           /* spazio tra le due immagini */
+    gap: 5px;           /* spazio tra le due immagini */
     width: 100%;
     box-sizing: border-box;
 }
@@ -437,7 +437,7 @@ p {
         display: flex;
         flex-wrap: wrap; /* Consenti il wrapping delle immagini */
         justify-content: space-between; /* Spaziatura uniforme */
-        gap: 20px; /* Spaziatura tra le immagini */
+        gap:5px; /* Spaziatura tra le immagini */
         margin-top: 20px; /* Spazio sopra la gallery */
         margin-bottom: 20px;
         width: 100%; /* Assicura che occupi la larghezza intera */
