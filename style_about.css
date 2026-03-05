@@ -313,29 +313,14 @@ p {
     }
 }
 
-/* wrapper */
-.reveal-lines {
-  overflow: hidden;
+.reveal-text{
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .8s ease, transform .8s ease;
 }
 
-/* ogni riga creata via JS */
-.reveal-line {
-  overflow: hidden;
-  display: block;
+.reveal-text.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
-.reveal-line > span {
-  display: inline-block;
-  transform: translateY(120%);
-  transition: transform 0.9s cubic-bezier(.2,.8,.2,1);
-}
-
-.reveal-lines.is-visible .reveal-line > span {
-  transform: translateY(0);
-}
-
-.reveal-line:nth-child(1) > span { transition-delay: 0.00s; }
-.reveal-line:nth-child(2) > span { transition-delay: 0.08s; }
-.reveal-line:nth-child(3) > span { transition-delay: 0.16s; }
-.reveal-line:nth-child(4) > span { transition-delay: 0.24s; }
-.reveal-line:nth-child(5) > span { transition-delay: 0.32s; }

@@ -48,23 +48,36 @@ const burgerMenu = document.getElementById('burgerMenu');
         });
 
         
+/* 
+(() => {
+  const cursor = document.getElementById("cursor");
+  if (!cursor) return;
 
+  // 1) forza cursor:none su root (più forte di body)
+  document.documentElement.style.cursor = "none";
+  document.body.style.cursor = "none";
 
-const cursor = document.querySelector(".custom-cursor");
+  // helper: forza cursor none sull'elemento e sui suoi parent
+  const forceNoneUp = (el) => {
+    let n = el;
+    for (let i = 0; i < 6 && n && n.style; i++) {
+      n.style.cursor = "none";
+      n = n.parentElement;
+    }
+  };
 
-document.addEventListener("mousemove", (e) => {
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
-});
+  document.addEventListener("mousemove", (e) => {
+    // 2) muovi cursore custom
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
 
-const hoverElements = document.querySelectorAll("a, button");
+    // 3) forza cursor:none sull'elemento sotto al mouse
+    forceNoneUp(e.target);
+  }, true);
 
-hoverElements.forEach(el => {
-  el.addEventListener("mouseenter", () => {
-    cursor.classList.add("hover");
-  });
+  // 4) anche su hover/focus (nav, link, button, ecc.)
+  document.addEventListener("mouseover", (e) => forceNoneUp(e.target), true);
+  document.addEventListener("focusin", (e) => forceNoneUp(e.target), true);
+})();
+*/
 
-  el.addEventListener("mouseleave", () => {
-    cursor.classList.remove("hover");
-  });
-});
