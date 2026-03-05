@@ -7,6 +7,12 @@ html {
   color: white;
 }
 
+::-webkit-selection {
+  background: black;
+  color: white;
+}
+
+
 @font-face {
     font-family: 'Switzer';
     src: url('Switzer-Variable.ttf') format('truetype');
