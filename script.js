@@ -81,3 +81,15 @@ const burgerMenu = document.getElementById('burgerMenu');
 })();
 */
 
+const gallery = document.querySelector('.image-gallery');
+
+if (gallery) {
+  gallery.addEventListener('wheel', function (e) {
+    const isScrollableHorizontally = gallery.scrollWidth > gallery.clientWidth;
+
+    if (!isScrollableHorizontally) return;
+
+    e.preventDefault();
+    gallery.scrollLeft += e.deltaY * 1.2;
+  }, { passive: false });
+}
