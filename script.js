@@ -84,12 +84,14 @@ const burgerMenu = document.getElementById('burgerMenu');
 const gallery = document.querySelector('.image-gallery');
 
 if (gallery) {
-  gallery.addEventListener('wheel', function (e) {
-    const isScrollableHorizontally = gallery.scrollWidth > gallery.clientWidth;
+  gallery.addEventListener('wheel', (e) => {
+    const canScroll = gallery.scrollWidth > gallery.clientWidth;
+    if (!canScroll) return;
 
-    if (!isScrollableHorizontally) return;
-
-    e.preventDefault();
-    gallery.scrollLeft += e.deltaY * 1.2;
+    // Intervieni solo se il gesto è principalmente verticale
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      gallery.scrollLeft += e.deltaY;
+    }
   }, { passive: false });
 }
