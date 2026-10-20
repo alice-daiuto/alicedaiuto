@@ -407,7 +407,7 @@ p {
         order: 1;
         width: 100%; /* Larghezza al 100% */
         margin-bottom: 20px; /* Spazio sotto il contenitore right */
-        padding: 10px;
+        padding: 0px;
         flex-grow: 1; /* Fa sì che occupi lo spazio disponibile */
         overflow-y: visible; /* Rende il contenuto visibile */
         overflow-x: hidden; /* Nasconde overflow orizzontale */
@@ -417,7 +417,7 @@ p {
         order: 2; /* Seconda sezione */
         width: 100%; /* Larghezza al 100% */
         margin-bottom: 20px; /* Spazio sotto il contenitore right */
-        padding: 10px;
+        padding: 0px;
         flex-grow: 1; /* Fa sì che occupi lo spazio disponibile */
         overflow-y: auto; /* Rende scrollabile se necessario */
         overflow-x: hidden;
@@ -466,10 +466,10 @@ p {
     }
 
     body {
-        padding: 10px; 
+        padding: 0px 15px; 
         overflow-x: hidden; 
         overflow-y: auto;
-        margin: 15px;
+        margin: 0px;
         min-height: 100vh; /* Fa sì che il body copra tutto lo schermo */
     }
 
